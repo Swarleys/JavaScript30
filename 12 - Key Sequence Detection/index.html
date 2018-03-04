@@ -6,7 +6,17 @@
   <script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
 </head>
 <body>
+<h1>If you want Unicorns or Rainbows you only need to type the Konami Code</h1>
 <script>
+  const pressed = [];
+  const secretCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightab";
+  const secretLength = 10;
+  window.addEventListener("keyup", e => {
+    pressed.push(e.key);
+    pressed.splice(-secretLength - 1, pressed.length - secretLength);
+    console.log(pressed);
+    if(pressed.join("").includes(secretCode)) { cornify_add(); }
+  });
 </script>
 </body>
 </html>
