@@ -44,7 +44,8 @@ button.addEventListener("click", clearAll);
 
 function clearAll(){
    populateListClear(items, itemsList);
-   localStorage.clear(); // if I don't reload the page I don't know why the keys retorn even after cleared
+   localStorage.clear();
+   items.length = 0;
 }
 
 function populateListClear(plates = {},platesList){
